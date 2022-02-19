@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BooksAllComponent } from './books-all.component';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-  { path: '', component: BooksAllComponent },
-];
+import { BooksAllRouterModule } from './books-all.router';
 
 @NgModule({
   declarations: [
@@ -13,7 +9,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
+    BooksAllRouterModule,
   ],
   exports: [
     BooksAllComponent,

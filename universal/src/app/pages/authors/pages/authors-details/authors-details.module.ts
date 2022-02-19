@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthorsDetailsComponent } from './authors-details.component';
-import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [
-  { path: '', component: AuthorsDetailsComponent },
-];
+import { AuthorsDetailsRouterModule } from './authors-details.router';
 
 @NgModule({
   declarations: [
@@ -13,7 +9,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
+    AuthorsDetailsRouterModule,
   ],
   exports: [
     AuthorsDetailsComponent,

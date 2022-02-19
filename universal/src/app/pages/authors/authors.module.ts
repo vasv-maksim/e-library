@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthorRoutingModule } from './routing/author-routing.module';
+import { AuthorRoutingModule } from './author.routing';
 import { AuthorsComponent } from './authors.component';
 
 @NgModule({
