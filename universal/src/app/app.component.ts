@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TitleStore } from './app.store';
 
 @Component({
@@ -7,6 +8,6 @@ import { TitleStore } from './app.store';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title$ = this.titleStore.selectTitle();
-  constructor(private titleStore: TitleStore) {}
+  title$: Observable<string> = this.titleStore.selectTitle();
+  constructor(private titleStore: TitleStore) { }
 }

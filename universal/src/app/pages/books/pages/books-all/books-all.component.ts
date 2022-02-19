@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { Book } from '../../state/book.interface';
+import { BooksEntityStore } from '../../state/books.store';
+
 
 @Component({
   selector: 'app-books-all',
@@ -6,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./books-all.component.scss']
 })
 export class BooksAllComponent implements OnInit {
+
+  books$: Observable<Book> = this.booksEntityStore.selectBooks();
   
-  constructor() { }
+  constructor(private booksEntityStore: BooksEntityStore) { }
 
   ngOnInit(): void {
+    this.books$.subscribe()
   }
 
 }
