@@ -11,9 +11,11 @@ import { BooksEntityStore } from '../../state/books.store';
 })
 export class BooksAllComponent implements OnInit {
 
-  books$: Observable<Book> = this.booksEntityStore.selectBooks();
+  books$: Observable<Book[]> = this.booksEntityStore.selectAll();
   
-  constructor(private booksEntityStore: BooksEntityStore) { }
+  constructor(
+    private booksEntityStore: BooksEntityStore,
+  ) { }
 
   ngOnInit(): void {
     this.books$.subscribe()

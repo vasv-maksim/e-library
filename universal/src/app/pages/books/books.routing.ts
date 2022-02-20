@@ -13,11 +13,11 @@ export const routes: Routes = [{
   children: [
     { 
       path: BooksRouting.All, loadChildren: () => import('./pages/books-all/books-all.module')
-        .then(m => m.BooksAllModule) 
+        .then(m => m.BooksAllModule)
     },
     { 
-      path: BooksRouting.Detailed, loadChildren: () => import('./pages/book-details/books-details.module')
-        .then(m => m.BooksDetailsModule) 
+      path: `${BooksRouting.Detailed}/:id`, loadChildren: () => import('./pages/book-details/books-details.module')
+        .then(m => m.BooksDetailsModule)
     },
     { 
       path: '', redirectTo: BooksRouting.All, pathMatch: 'full',

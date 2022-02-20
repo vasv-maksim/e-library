@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthorsAllComponent } from './authors-all.component';
+import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
-  { path: '', component: AuthorsAllComponent },
-];
+export const routes: Routes = [{ 
+  path: '', 
+  component: HomeComponent,
+}];
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
-  ],
+  ]
 })
-export class AuthorsAllRouterModule { }
+export class HomeRoutingModule { }

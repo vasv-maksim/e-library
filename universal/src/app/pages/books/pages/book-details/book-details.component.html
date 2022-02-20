@@ -1,1 +1,43 @@
-<p>book-details works!</p>
+<h3>Детальная информация</h3>
+  <ng-container *ngIf="book$ | async as book">
+    <ng-container *ngIf="book">
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">id</th>
+            <td>{{ book.id }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Имя</th>
+            <td>{{ book.name }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Автор</th>
+            <td *ngIf="(authorsEntityStore.selectById(book.authorId) | async) as author">
+              <a [routerLink]="['/authors/detailed', author.id]">
+                {{ author?.name || 'Нет данных' }}
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Год написания</th>
+            <td>{{ book.year }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Количество страниц</th>
+            <td>{{ book.pages }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ng-container>
+  </ng-container>
+<div>
+  
+</div>
+<nav class="mb-20 mt-20">
+  <a routerLink="/books/all" 
+    routerLinkActive="active">
+    К списку книг
+  </a>
+</nav>
+

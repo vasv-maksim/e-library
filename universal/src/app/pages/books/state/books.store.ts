@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { createEntityQuery, createEntityStore, EntityState } from "@datorama/akita";
+import { filter, map } from "rxjs";
 import { Book } from "./book.interface";
 import { books } from './books.initial';
 
@@ -20,5 +21,13 @@ export class BooksEntityStore  {
 
   setInitialState = () =>  this.store.set(books);
 
-  selectBooks = () => this.query.select('books');
+  selectAll = () => this.query.selectAll();
+  selectById = (id: string) => this.query.selectEntity(id);
+  authorBooks = (authorId: string) => this.query.selectAll()
+  .pipe(
+    map(x => x.filter(
+          y => y.authorId === authorId
+        )
+      )
+    )
 }

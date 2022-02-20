@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorsEntityStore } from '../../state/author.store'
 
 @Component({
   selector: 'app-authors-all',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthorsAllComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authorsEntityStore: AuthorsEntityStore) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+  
+  authors$  = this.authorsEntityStore.selectAll();
 
 }

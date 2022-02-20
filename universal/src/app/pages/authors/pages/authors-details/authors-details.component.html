@@ -1,1 +1,38 @@
-<p>autors-details works!</p>
+<h3>Детальная информация</h3>
+<ng-container *ngIf="author$ | async as author">
+  <ng-container *ngIf="author">
+    <table>
+      <tbody>
+        <tr>
+          <th scope="row">id</th>
+          <td>{{ author.id }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Имя</th>
+          <td>{{ author.name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Количество книг</th>
+          <td>{{ (books$ | async)?.length || 'Нет данных' }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Книги автора</th>
+          <td>
+            <span class="ml-5" *ngFor="let book of (books$ | async)">
+              <a [routerLink]="['/books/detailed', book.id]">
+                "{{book.name}}"
+              </a>
+            </span>
+          </td>
+        </tr>
+      </tbody>  
+    </table>
+  </ng-container>
+</ng-container>
+
+<nav class="mb-20 mt-20">
+  <a routerLink="/authors/all" 
+    routerLinkActive="active">
+    К списку авторов
+  </a>
+</nav>

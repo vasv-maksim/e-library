@@ -16,7 +16,7 @@ const routes: Routes = [{
         .then(m => m.AuthorsAllModule) 
     },
     { 
-      path: AuthorRouting.Detailed, loadChildren: () => import('./pages/authors-details/authors-details.module')
+      path: `${AuthorRouting.Detailed}/:id`, loadChildren: () => import('./pages/authors-details/authors-details.module')
         .then(m => m.AuthorsDetailsModule) 
     },
     { 

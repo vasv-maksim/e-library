@@ -19,4 +19,8 @@ export class AuthorsEntityStore  {
   }
 
   setInitialState = () =>  this.store.set(authors);
+
+  selectAll = () => this.query.selectAll();
+  selectById = (id: string) => this.query.selectEntity(id);
+  selectMany = (ids: string[]) => this.query.selectMany(ids);
 }

@@ -5,20 +5,27 @@ export enum AppRouting {
   About = 'about',
   Authors = 'authors',
   Books = 'books',
+  Home = 'home',
 }
 
 const routes: Routes = [
   { 
     path: '', 
-    redirectTo: AppRouting.Books, 
+    redirectTo: AppRouting.Home, 
     pathMatch: 'full' 
   },
   { 
+    path: AppRouting.Home, loadChildren: () => import('./pages/home/home.module')
+      .then(m => m.HomeModule) 
+  },
+  { 
     path: AppRouting.Books, loadChildren: () => import('./pages/books/books.module')
-      .then(m => m.BooksModule) },
+      .then(m => m.BooksModule) 
+  },
   { 
     path: AppRouting.Authors, loadChildren: () => import('./pages/authors/authors.module')
-      .then(m => m.AuthorsModule) },
+      .then(m => m.AuthorsModule) 
+  },
   { 
     path: AppRouting.About, loadChildren: () => import('./pages/about/about.module')
       .then(m => m.AboutModule) 

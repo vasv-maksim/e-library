@@ -5,3 +5,56 @@ body {
   overflow: hidden; 
   margin: 0;
 }
+
+h2 {
+  color:#1976d2;
+  font-size: 20px;
+  font-style: italic;
+}
+
+h3 {
+  color:#1976d2;
+  font-size: 18px;
+  font-style: italic;
+}
+
+ul {
+  line-height: 250%;
+}
+
+li {
+  color:#1976d2;
+  font-size: 14px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  text-align: left;
+  padding-left: 30px;
+}
+
+
+

@@ -1,1 +1,9 @@
-<p>autors-all works!</p>
+<ul>
+  <ng-container *ngFor="let author of authors$ | async; index as i">
+    <a [routerLink]="['../detailed', author.id]">
+      <li> 
+        {{ i + 1 }}. {{ author.name }}
+      </li>
+    </a>
+  </ng-container>
+</ul>

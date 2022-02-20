@@ -29,4 +29,18 @@ export const books: Book[] = [
     year: 1883,
     pages: 488,
   },
+  {
+    id: '5', 
+    name: 'Оно',  
+    authorId: '3',
+    year: 1986,
+    pages: 544,
+  },
+  {
+    id: '6', 
+    name: 'Кэрри',  
+    authorId: '3',
+    year: 1974,
+    pages: 332,
+  },
 ];
