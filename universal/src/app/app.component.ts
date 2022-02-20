@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TitleStore } from './app.store';
 
@@ -7,7 +7,12 @@ import { TitleStore } from './app.store';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title$: Observable<string> = this.titleStore.selectTitle();
-  constructor(private titleStore: TitleStore) { }
+  constructor(
+    private titleStore: TitleStore,
+  ) { }
+
+  ngOnInit(): void {
+  }
 }

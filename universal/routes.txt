@@ -1,0 +1,13 @@
+/home
+/about
+/books/all
+/books/detailed/1
+/books/detailed/2
+/books/detailed/3
+/books/detailed/4
+/books/detailed/5
+/books/detailed/6
+/authors/all
+/authors/detailed/1
+/authors/detailed/2
+/authors/detailed/3
