@@ -7,10 +7,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "run": "http-server -c-1 -P http://localhost:9000",
     "dev:ssr": "ng run universal:serve-ssr",
     "serve:ssr": "node dist/universal/server/main.js",
     "build:ssr": "ng build && ng run universal:server",
-    "prerender": "ng run universal:prerender --routesFile routes.txt"
+    "prerender": "ng run universal:prerender --routesFile routes.txt",
+    "start:prerender": "http-server -c-1 -P http://localhost:9000 dist/universal/browser"
   },
   "private": true,
   "dependencies": {
