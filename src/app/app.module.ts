@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,12 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
       sortAlphabetically: true
     }),
     AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
