@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       registrationStrategy: 'registerWhenStable:30000'
     }),
   ],
-  providers: [],
+  providers: [
+    { provide : LocationStrategy , useClass: HashLocationStrategy } // Чтобы http-server нормально работал с Lighthouse
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
