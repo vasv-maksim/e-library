@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    RouterModule,
   ],
   providers: [
     { provide : LocationStrategy , useClass: HashLocationStrategy } // Чтобы http-server нормально работал с Lighthouse

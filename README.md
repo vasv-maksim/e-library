@@ -1,6 +1,6 @@
-# Universal
+# e-library
 
-Тренировка Akita, роутинга, lazy-loading'а, SSR и пререндеринга.
+Тренировка Akita, роутинга, lazy-loading'а, SSR, PWA и пререндеринга.
 
 ### Зависимости
 `npm install`
