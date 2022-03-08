@@ -1,4 +1,4 @@
-# Universal
+# e-library
 
 Тренировка Akita, роутинга, lazy-loading'а, SSR и пререндеринга.
 

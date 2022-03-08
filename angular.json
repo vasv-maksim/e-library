@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "universal": {
+    "e-library": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/universal/browser",
+            "outputPath": "dist/e-library/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "universal:build:production"
+              "browserTarget": "e-library:build:production"
             },
             "development": {
-              "browserTarget": "universal:build:development"
+              "browserTarget": "e-library:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "universal:build"
+            "browserTarget": "e-library:build"
           }
         },
         "test": {
@@ -111,7 +111,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/universal/server",
+            "outputPath": "dist/e-library/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -138,12 +138,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "universal:build:development",
-              "serverTarget": "universal:server:development"
+              "browserTarget": "e-library:build:development",
+              "serverTarget": "e-library:server:development"
             },
             "production": {
-              "browserTarget": "universal:build:production",
-              "serverTarget": "universal:server:production"
+              "browserTarget": "e-library:build:production",
+              "serverTarget": "e-library:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -157,12 +157,29 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "universal:build:production",
-              "serverTarget": "universal:server:production"
+              "browserTarget": "e-library:build:production",
+              "serverTarget": "e-library:server:production"
             },
             "development": {
-              "browserTarget": "universal:build:development",
-              "serverTarget": "universal:server:development"
+              "browserTarget": "e-library:build:development",
+              "serverTarget": "e-library:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "e-library:build:production",
+              "serverTarget": "e-library:server:production"
+            },
+            "development": {
+              "browserTarget": "e-library:build:development",
+              "serverTarget": "e-library:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -170,5 +187,5 @@
       }
     }
   },
-  "defaultProject": "universal"
+  "defaultProject": "e-library"
 }

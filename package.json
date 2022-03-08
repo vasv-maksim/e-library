@@ -1,5 +1,5 @@
 {
-  "name": "universal",
+  "name": "e-library",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,11 +8,12 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "run": "http-server -c-1 -P http://localhost:9000",
-    "dev:ssr": "ng run universal:serve-ssr",
-    "serve:ssr": "node dist/universal/server/main.js",
-    "build:ssr": "ng build && ng run universal:server",
-    "prerender": "ng run universal:prerender --routesFile routes.txt",
-    "start:builded": "http-server -c-1 -P http://localhost:9000 dist/universal/browser"
+    "dev:ssr": "ng run e-library:serve-ssr",
+    "serve:ssr": "node dist/e-library/server/main.js",
+    "build:ssr": "ng build && ng run e-library:server",
+    "prerender": "ng run e-library:prerender --routesFile routes.txt",
+    "start:builded": "http-server -c-1 -P http://localhost:9000 dist/e-library/browser",
+    "app-shell": "ng run e-library:app-shell:development"
   },
   "private": true,
   "dependencies": {
